@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+void main()
+{
+    int i, j, k, n, angka=1;
+
+    system("cls");
+    printf("==================\n");
+    printf("Tugas Quiz ASD\n");
+    printf("==================\n");
+    printf("   1. Level 1\n");
+    printf("   2. Level 2\n");
+    printf("   3. Level 3\n");
+    printf("   4. Exit\n");
+    printf("==================\n");
+    printf(" Pilih Menu : ");
+    scanf("%d", &n);
+
+    switch(n){
+    case 1:
+        system("cls");
+        printf("Masukkan Angka : ");
+        scanf("%d", &n);
+    for(i=0; i<=n; i++){
+	    for(j=0; j<=i; j++){
+        printf("%d ",i+j);
+    }
+    printf("\n");
+    }
+    break;
+
+    case 2: 
+    system("cls");
+        printf("Masukkan Angka : ");
+        scanf("%d", &n);
+    for(i=1; i<=n; i++){
+	    for(j=1; j<=i; j++){
+        printf("%d ",i*j);
+    }
+    printf("\n");
+    }
+    break;
+    
+    case 3:
+    system("cls");
+            int isi,batas,bil,temp,temp2,midkir,midkan,seg1,seg2,seg3,seg4,spas1,spas2;
+            printf("Masukan Bilangan (max 9) : ");
+            scanf("%d",&bil);
+            isi=bil-1;
+            temp=isi;
+            temp2=isi;
+            for (batas=1;batas<=isi;batas++){
+                //SEGITIGA KIRI ATAS
+                for (spas1=isi;spas1>=batas;spas1--)
+                printf("%s"," ");
+                for (seg1=1;seg1<=batas;seg1++)
+                printf("%d",seg1);
+                //SEGITIGA KANAN ATAS
+                for (seg2=batas-1;seg2>=1;seg2--)
+                printf("%d",seg2);
+                printf("\n");
+            }//TENGAH/
+            for(midkir=1;midkir<=bil;midkir++)
+            printf("%d",midkir);
+            for(midkan=bil-1;midkan>=1;midkan--)
+            printf("%d",midkan);
+            printf("\n");
+            for (batas=1;batas<=isi;batas++){
+                //SEGITIGA KIRI BAWAH
+                for (spas2=1;spas2<=batas;spas2++)
+                printf("%s"," ");
+                for (seg3=1;seg3<=temp;seg3++)
+                printf("%d",seg3);temp=temp-1;
+                //SEGITIGA KANAN BAWAH
+                for (seg4=temp2-1;seg4>=1;seg4--)
+                printf("%d",seg4);temp2=temp2-1;
+                printf("\n");
+            }getch();
+            system("pause");
+            main();
+	break;
+
+    default : printf("ini adalah default");
+}
+
+}
